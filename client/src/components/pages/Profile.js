@@ -7,7 +7,7 @@ export default class Profile extends Component {
         firstname: "",
         lastname: "",
         city: "",
-        zipCode:"", 
+        zipcode:"", 
         skillshare: "",
         skillwanted: "",
         bio: ""
@@ -21,6 +21,17 @@ export default class Profile extends Component {
             [name]: value
         });
     }
+    handleFormSubmit = event => {
+        event.preventDefault()
+        const profileObject = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            city: this.state.city,
+            skillshare: this.state.skillshare,
+            skillwanted: this.state.skillwanted,
+            bio: this.state.bio,
+    }
+}
 
     render() {
         return (
