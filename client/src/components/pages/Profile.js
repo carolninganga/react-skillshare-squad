@@ -13,6 +13,15 @@ export default class Profile extends Component {
         bio: ""
     }
 
+    handleInputChange = event => {
+        const name = evnet.target.name;
+        const value = event.target.value;
+        console.log(name)
+        this.setState ({
+            [name]: value
+        });
+    }
+
     render() {
         return (
 
