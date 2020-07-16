@@ -26,7 +26,7 @@ const Navbar = ({ title, icon }) => {
   const authLinks = (
     <Fragment>
       <li>
-        <a className="btn btn-primary"><i class="fas fa-user-check"></i>Profile</a>
+        <Link to='/profile' className="btn btn-primary" ><i class="fas fa-user-check"></i>Profile</Link>
       </li>
       <li>Hello {user && user.name}</li>
       <li>
