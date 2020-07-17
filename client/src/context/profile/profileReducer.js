@@ -1,48 +1,45 @@
 import {
-    GET_CONTACTS,
-    ADD_CONTACT,
-    DELETE_CONTACT,
+    GET_PROFILES,
+    ADD_PROFILE,
+    DELETE_PROFILE,
     SET_CURRENT,
     CLEAR_CURRENT,
-    UPDATE_CONTACT,
+    UPDATE_PROFILE,
     CLEAR_FILTER,
-    FILTER_CONTACTS,
-    CONTACT_ERROR,
-    CLEAR_CONTACTS
+    FILTER_PROFILES,
+    PROFILE_ERROR,
+    CLEAR_PROFILES
 } from '../types';
-
 export default (state, action) => {
     switch(action.type) {
-        case GET_CONTACTS: 
+        case GET_PROFILES: 
         return {
             ...state,
-            contacts: action.payload,
+            profiles: action.payload,
             loading: false
         }
-        case ADD_CONTACT: 
+        case ADD_PROFILE: 
          return {
              ...state,
-             contacts: [action.payload, ...state.contacts],
+             profiles: [action.payload, ...state.profiles],
              loading: false
          };
-         case UPDATE_CONTACT:
+         case UPDATE_PROFILE:
              return {
                  ...state,
-                 contacts: state.contacts.map(contact => contact._id === action.payload._id? action.payload: contact),
+                 profiles: state.profiles.map(profile => profile._id === action.payload._id? action.payload: profile),
                  loading: false
              }
-
-
-         case DELETE_CONTACT:
+         case DELETE_PROFILE:
              return {
                  ...state,
-                 contacts: state.contacts.filter(contact => contact._id !== action.payload),
+                 profiles: state.profiles.filter(profile => profile._id !== action.payload),
                  loading: false
              }
-         case CLEAR_CONTACTS:
+         case CLEAR_PROFILES:
              return {
                  ...state,
-                 contacts: null,
+                 profiles: null,
                  filtered: null,
                  error: null,
                  current: null
@@ -57,12 +54,12 @@ export default (state, action) => {
                  ...state,
                  current: null 
              };
-         case FILTER_CONTACTS:
+         case FILTER_PROFILES:
              return {
                  ...state,
-                 filtered: state.contacts.filter(contact => {
+                 filtered: state.profiles.filter(profile => {
                      const regex = new RegExp(`${action.payload}`,'gi');
-                     return contact.name.match(regex) || contact.email.match(regex)
+                     return profile.name.match(regex) || profile.email.match(regex)
                  })
              }
          case CLEAR_FILTER:
@@ -70,13 +67,12 @@ export default (state, action) => {
                     ...state,
                     filtered: null 
                 };
-        case CONTACT_ERROR: 
+        case PROFILE_ERROR: 
                 return {
                     ...state,
                     error: action.payload 
                 }
          default: 
             return state;
-
     }
 }

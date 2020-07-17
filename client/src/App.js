@@ -10,15 +10,11 @@ import Login from './components/auth/Login';
 import Alerts from './components/layout/Alerts';  
 import PrivateRoute from './components/routing/PrivateRoute';
 
-import ContactState from './context/contact/ContactState';
+import ProfileState from './context/profile/ProfileState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState'; 
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
-
-// // import react-admin components
-import { Admin, Resource } from 'react-admin';
-import Dashboard from './container/Dashboard'
 
 
 if(localStorage.token) {
@@ -28,7 +24,7 @@ if(localStorage.token) {
 const App = () => {
   return (
   <AuthState>
-  <ContactState>
+  <ProfileState>
   <AlertState>
     <Router>
       <Fragment>
@@ -41,13 +37,12 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} /> 
               <Route exact path='/profile' component={Profile} /> 
-              <Route path="/dashboard" component={Dashboard}/>
             </Switch>
           </div>
       </Fragment>
     </Router>
     </AlertState>
-  </ContactState>
+  </ProfileState>
   </AuthState>
   );
 }

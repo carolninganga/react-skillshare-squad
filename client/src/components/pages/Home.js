@@ -1,5 +1,4 @@
 import React, { useContext,useEffect } from 'react'
-import Room from '../../components/layout/Room/Room'
 import AuthContext from '../../context/auth/authContext'
 
 const Home = () => {
@@ -11,9 +10,7 @@ const Home = () => {
     },[])
     return (
         <div className="grid-2">
-
-        <Room />
-     
+     <h1>Home Page for profiles</h1>
         </div>
     )
 }
