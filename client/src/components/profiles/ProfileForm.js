@@ -65,24 +65,44 @@ const ProfileForm = () => {
             <h2 className='text-primary'>{current ? 'Edit Profile' : 'Add Profile'}</h2>
             <input
                 type='text'
-                placeholder='Name'
-                name='name'
-                value={name}
+                placeholder='FirstName'
+                name='firstname'
+                value={firstname}
                 onChange={onChange}
                 />
                 <input
-                type='email'
-                placeholder='Email'
-                name='email'
-                value={email}
+                type='text'
+                placeholder='Lastname'
+                name='lastname'
+                value={lastname}
                 onChange={onChange}
                 /> <input
                 type='text'
-                placeholder='Phone'
-                name='phone'
-                value={phone}
+                placeholder='zipcode'
+                name='zipcode'
+                value={zipcode}
                 onChange={onChange}
                 /> 
+                <input
+                type='text'
+                placeholder='skillshare'
+                name='skillshare'
+                value={skillshare}
+                onChange={onChange}
+                />
+                <input
+                type='text'
+                placeholder='skillwanted'
+                name='skillwanted'
+                value={skillwanted}
+                onChange={onChange}
+                /><input
+                type='text'
+                placeholder='bio'
+                name='bio'
+                value={bio}
+                onChange={onChange}
+                />
                 <h5>Profile Type</h5> 
                 <input type="radio" name="type" value="personal" checked={type === 'personal'} onChange={onChange} />Personal{' '}
                 <input type="radio" name="type" value="professional" checked={type === 'professional'} onChange={onChange} /> Professional
