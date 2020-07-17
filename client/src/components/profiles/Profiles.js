@@ -19,8 +19,6 @@ const Profiles = () => {
         return <h4>Please add a profile</h4>
     }
 
-
-
     return (
         <Fragment>
             {profiles !== null && !loading ? (
