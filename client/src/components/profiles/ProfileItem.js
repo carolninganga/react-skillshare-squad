@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ProfileContext from '../../../context/profile/profileContext';
+import ProfileContext from '../../context/profile/profileContext';
 
-const CardItem = ({ profile }) => {
+const ProfileItem = ({ profile }) => {
     const profileContext = useContext(ProfileContext);
     const { deleteProfile, setCurrent, clearCurrent } = profileContext;
 
@@ -67,4 +67,4 @@ ContactItem.propTypes = {
     contact: PropTypes.object.isRequired
 };
 
-export default CardItem;
+export default ProfileItem;
