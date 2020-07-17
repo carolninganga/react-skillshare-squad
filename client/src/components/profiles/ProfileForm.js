@@ -33,7 +33,7 @@ const ProfileForm = () => {
         bio: ""
     });
 
-    const { name, email, phone, type } = profile;
+    const { firstname, lastname, city, zipcode, skillshare, skillwanted, bio } = profile;
 
     const onChange = e =>
         setProfile({ ...profile, [e.target.name]: e.target.value })
