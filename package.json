@@ -1,5 +1,5 @@
 {
-  "name": "Beamifi",
+  "name": "skillshares",
   "version": "1.0.0",
   "description": "Beamifi - video messaging",
   "main": "server.js",
@@ -42,6 +42,7 @@
     "ra-data-fakerest": "^3.6.2",
     "ra-data-json-server": "^3.7.1",
     "ra-data-simple-rest": "^3.7.1",
+    "react-images-upload": "^1.2.8",
     "react-mail-form": "^2.1.0",
     "semantic-ui-react": "^0.88.2"
   },

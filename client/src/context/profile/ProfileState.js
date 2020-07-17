@@ -24,11 +24,12 @@ const ProfileState = props => {
     const [state, dispatch] = useReducer(ProfileReducer, initialState);
     const getProfiles = async profile => { 
         try {
-            const res = await axios.get('/api/profiles'); 
+            const res = await axios.get('/api/profile'); 
+            console.log(res);
             dispatch({ type: GET_PROFILES, payload: res.data })
         } catch (err) {
             dispatch({ type: PROFILE_ERROR, payload: err.response.msg})
-        }
+        }       
     }
     const addProfile = async profile => {
         const config = {
@@ -37,7 +38,7 @@ const ProfileState = props => {
             }
         }
         try {
-            const res = await axios.post('/api/profiles', profile, config); 
+            const res = await axios.post('/api/profile', profile, config); 
             dispatch({ type: ADD_PROFILE, payload: res.data })
         } catch (err) {
             dispatch({ type: PROFILE_ERROR, payload: err.response.msg})
@@ -45,7 +46,7 @@ const ProfileState = props => {
     }
     const deleteProfile = async id => {
         try {
-            await axios.delete(`/api/profiles/${id}`); 
+            await axios.delete(`/api/profile/${id}`); 
             dispatch({ type: DELETE_PROFILE, payload: id })
         } catch (err) {
             dispatch({ type: PROFILE_ERROR, payload: err.response.msg})
@@ -58,7 +59,7 @@ const ProfileState = props => {
             }
         }
         try {
-            const res = await axios.put(`/api/profiles/${profile._id}`, profile, config); 
+            const res = await axios.put(`/api/profile/${profile._id}`, profile, config); 
             dispatch({ type: UPDATE_PROFILE, payload: res.data })
         } catch (err) {
             dispatch({ type: PROFILE_ERROR, payload: err.response.msg})

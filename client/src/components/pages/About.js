@@ -1,5 +1,5 @@
 import React from 'react'
-import Member from '../layout/Team/Team';
+import Team from '../layout/Team/Team';
 import ReactContactForm from 'react-mail-form';
 import Footer from '../layout/Footer/Footer';
 

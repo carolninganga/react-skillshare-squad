@@ -9,7 +9,7 @@ const Profile = require('../models/Profile');
 //acccess Private
 router.get('/', auth, async (req, res) => {
     try {
-        const profiles = await Profile.find({ user: req.user.id }).sort({ date: -1 })
+        const profiles = await Profile.find()
         res.json(profiles);
     } catch (err) {
         console.error(err.message);
