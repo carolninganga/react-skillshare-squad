@@ -9,7 +9,7 @@ const CardItem = ({ profile }) => {
     const { firstname, lastname, city, zipcode, skillshare, skillwanted, bio } = profile;
 
     const onDelete = () => {
-        deleteContact(_id);
+        deleteProfile(_id);
         clearCurrent();
     };
 
@@ -26,6 +26,10 @@ const CardItem = ({ profile }) => {
                     <li>
                         <i className='fas fa-envelope-open' /> {firstname}
                     </li>
+                )}{lastname && (
+                    <li>
+                        <i className='fas fa-phone' /> {lastname}
+                    </li>
                 )}
                 {city && (
                     <li>
@@ -36,9 +40,17 @@ const CardItem = ({ profile }) => {
                     <li>
                         <i className='fas fa-phone' /> {zipcode}
                     </li>
-                )}{lastname && (
+                )}{skillshare && (
                     <li>
-                        <i className='fas fa-phone' /> {lastname}
+                        <i className='fas fa-phone' /> {skillshare}
+                    </li>
+                )}{skillwanted && (
+                    <li>
+                        <i className='fas fa-phone' /> {skillwanted}
+                    </li>
+                )}{bio && (
+                    <li>
+                        <i className='fas fa-phone' /> {bio}
                     </li>
                 )}
             </ul>
@@ -55,5 +67,4 @@ ContactItem.propTypes = {
     contact: PropTypes.object.isRequired
 };
 
-export default ContactItem;
-}
+export default CardItem;
