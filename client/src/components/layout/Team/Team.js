@@ -8,7 +8,7 @@ const extra = (
   </a>
 )
 
-const Member = () => (
+const Team = () => (
   <Card
     image='https://react.semantic-ui.com/images/avatar/large/elliot.jpg'
     header='Elliot Baker'
@@ -17,4 +17,4 @@ const Member = () => (
   />
 )
 
-export default Member;
+export default Team;
